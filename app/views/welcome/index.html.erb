@@ -1,69 +1,45 @@
 <div class="jumbotron">
-  <br>
-  <br>
-  <h1 class="title">启程网</h1>
+  <h1 class="title">前行网</h1>
   <p class="slogan">完成了十几年的进修之路，我们终于要踏上真正的战场了。
   <br>
   <br>
-  <strong>启程网</strong>为广大应届毕业战士们提供了各种企业的校招信息、招聘信息等。
+  <strong>前行网</strong>为广大应届毕业战士们提供了各种企业的校招信息、招聘信息等。
   <br>
   <br>
-  赶快在这里选择你的第一个副本，启程吧！
+  赶快在这里选择你的第一个副本，前行吧！
   </p>
   <br>
   <p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">选择副本</a></p>
 </div>
 <hr/>
-<h1>最新副本</h1>
-<div class="dropdown clearfix pull-right">
-    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuDivider" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-      排序
-        <span class="caret"></span>
-    </button>
-    <ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-        <li>
-          <%= link_to("按照薪资下限排序", jobs_path(:order => "by_lower_bound")) %>
-        </li>
-        <li>
-            <%= link_to("按照薪资上限排序", jobs_path(:order => "by_upper_bound")) %>
-
-        </li>
-        <li>
-          <%= link_to("按照发表时间排序", jobs_path ) %>
-
-        </li>
-    </ul>
+<section id="company">
+  <div class = "container-fluid">
+    <div class="row">
+      <div class="col-sm-4 ">
+        <div class="thumbnail">
+          <img src="http://y.photo.qq.com/img?s=VfqbvmFVI&l=y.jpg" alt="search" class = "img-thhumbnail">
+          <div class="caption">
+            <h3>厦门思明区软件园二期</h3>
+          </div>
+        </div>
+      </div>
+    <div class="col-sm-4 ">
+      <div class="thumbnail">
+        <img src="http://y.photo.qq.com/img?s=9yBkCQVj7&l=y.jpg" alt="bid" class = "img-thhumbnail">
+        <div class="caption">
+          <h3>info@firstjob.com</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4 ">
+      <div class="thumbnail">
+        <img src="http://y.photo.qq.com/img?s=bAQJ8dfF4&l=y.jpg" alt="heart" class = "img-thhumbnail">
+        <div class="caption">
+          <h3>0592-88888888</h3>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<br>
-<br>
-<table class="table table-boldered table-striped table-bordered table-hover">
-    <thead>
-        <tr>
-            <td>
-                职缺</td>
-            <td>薪资下限</td>
-            <td>薪资上限</td>
-            <td>刊登时间</td>
-        </tr>
-
-    </thead>
-    <tbody>
-        <% @jobs.each do |job| %>
-        <tr>
-            <td>
-                <%= link_to(job.title, job_path(job)) %>
-            </td>
-            <td>
-                <%= job.wage_lower_bound %>
-            </td>
-            <td>
-                <%= job.wage_upper_bound %>
-            </td>
-            <td>
-                <%= job.created_at %>
-            </td>
-        </tr>
-        <% end %>
-    </tbody>
-
-</table>
+</section>
+<hr/>
