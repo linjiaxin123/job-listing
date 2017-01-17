@@ -10,9 +10,9 @@
     margin-bottom:20px;
     cursor:pointer;
 }
-.columns:hover .header { background-color:red;}
-.columns:hover .button{ background-color:red;}
-.columns:hover .grey { color:#4CAF50; }
+.columns:hover .header { background-color:#FF9800;}
+.columns:hover .button{ background-color:#FF9800;}
+.columns:hover .grey { color:#FF9800; }
 .columns:hover .price { color:red;}
 
 .name {
@@ -23,6 +23,7 @@
     -webkit-transition: 0.3s;
     transition: 0.3s;
     overflow: hidden;
+    color: black;
 }
 
 .name:hover {
@@ -30,7 +31,7 @@
 }
 
 .name .header {
-    background-color: #111;
+    background-color: #F5F5F5;
     color: white;
     font-size: 25px;
     transition: all .2s ease-in-out;
@@ -53,9 +54,9 @@
 }
 
 .button {
-    background-color: #4CAF50;
+    background-color: #FFE0B2;
     border: none;
-    color: white;
+    color: #FFE0B2;
     padding: 10px 25px;
     text-align: center;
     text-decoration: none;
@@ -99,4 +100,18 @@ body
     margin: -45px 10px 0px 25px;
     z-index: 9;
     width: 20%;
+}
+
+.quote-box{
+
+    overflow: hidden;
+    margin-top: -50px;
+    padding-top: -100px;
+    border-radius: 17px;
+    background-color: #FFF9C4;
+    margin-top: 25px;
+    color:white;
+    width: 325px;
+    box-shadow: 2px 2px 2px 2px #E0E0E0;
+
 }

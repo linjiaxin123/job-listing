@@ -20,13 +20,14 @@
 
 <div class="container">
 	<div class="row">
-	<h2 style="text-align:center">最新副本</h2>
+	<h2 style="text-align:center">选择岗位</h2>
 
 <div>
     <% @jobs.each do |job| %>
 
 <div class="col-md-4 col-sm-4 col-xs-12">
 <div class="columns">
+  <blockquote class="quote-box">
   <ul class="name">
     <li class="header"><%= link_to(job.title, job_path(job)) %> </li>
     <li class="highlight"><%= job.description %></li>
@@ -35,6 +36,7 @@
     <li class="highlight">创建时间：<%= job.created_at %></li>
     <li class="grey"><%= link_to("查看详情", job_path(job)) %></li>
   </ul>
+  </blockquote>
 </div>
 </div>
 <% end %>
