@@ -53,6 +53,7 @@
   </tr>
   <% end %>
 </table>
-<div class="text-center">
-  <%= will_paginate @jobs %>
+<br>
+<div class="text-center col-xs-12">
+  <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
 </div>

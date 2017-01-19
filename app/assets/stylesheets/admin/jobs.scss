@@ -1,3 +1,32 @@
 // Place all the styles related to the admin/jobs controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  background: #0e0e0e;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+/*Responsive table*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #34495e;
+  color: #f3f3f3;
+}
+
+td, th {
+  padding: 8px;
+  text-align: left;
+}
+
+/* Zebra striping */
+tr:nth-of-type(odd) {
+  background: #16a085;
+}
+
+th {
+  background: #2c3e50;
+  font-weight: bold;
+}
