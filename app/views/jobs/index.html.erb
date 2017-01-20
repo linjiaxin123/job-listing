@@ -18,20 +18,19 @@
     </ul>
 </div>
 
-<div class="container">
-	<div class="row">
+
 	<h2 style="text-align:center">选择岗位</h2>
 
 <div>
     <% @jobs.each do |job| %>
 
-<div class="col-md-4 col-sm-4 col-xs-12">
+<div class="col-md-4 ">
 <div class="columns">
-  <section id="plans">
+
           <div class="container">
               <div class="row">
 
-                <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="col-md-4">
                   <!-- item -->
                   <div class="text-center">
                       <div class="panel panel-success panel-pricing">
@@ -56,12 +55,12 @@
                 </div>
               </div>
           </div>
-      </section>
 
 </div>
 </div>
 <% end %>
 </div>
+
 <br>
 <div class="text-center col-xs-12">
   <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
