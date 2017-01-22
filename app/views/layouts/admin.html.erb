@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>管理后台</title>
+        <title>Admin</title>
         <%= csrf_meta_tags %>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,23 +11,16 @@
     <body>
 
         <div class="container-fluid">
-            <%= render "common/navbar" %>
+
             <%= render "common/flashes" %>
-            <div class="row">
-              <div class="col-md-1">
-                <div class="btn-group-vertical" role="group" aria-label="Default button group">
-            <button type="button" class="btn btn-sm"><%= link_to("后台管理", admin_jobs_path) %></button>
-            <button type="button" class="btn btn-sm"><%= link_to("新增岗位", new_admin_job_path) %></button>
-            <button type="button" class="btn btn-sm"><%= link_to("登出", destroy_user_session_path ,method: :delete) %></button>
-        </div>
-              </div>
 
-              <div class="col-md-11">
+
+
                 <%= yield %>
-              </div>
+
         </div>
 
-        <%= render "common/footer" %>
+
 
     </body>
 </html>

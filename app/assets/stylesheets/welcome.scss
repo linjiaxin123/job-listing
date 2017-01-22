@@ -2,8 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .container-fluid .jumbotron5{
-  padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
-  margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+
+  margin: -15px ;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
   border-radius: 0;//圆角为0
 }
 
@@ -21,8 +21,8 @@
 }
 
 .container-fluid .jumbotron4{
-  padding-bottom: 110px;//内部的底部边距，这样按钮不会很靠近底部了
-  margin: 0 -15px 20px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
+
+  margin: -15px;//顶部margin为0，因此可以直接接着导航栏；左右margin为负15，因此可以顶到浏览器的边缘（抵消 container-fluid 的 15px 左右padding);底部margin为20，会跟下面的内容撑开距离
   border-radius: 0;//圆角为0
 }
 
@@ -102,7 +102,7 @@
   background-image:url('https://ooo.0o0.ooo/2017/01/17/587e21fa67ff8.jpg');
   background-repeat: no-repeat;
   background-size: cover;
-  padding-bottom: 110px;
+
   padding-top: 300px;
 }
 

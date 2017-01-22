@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation" >
+<nav class="navbar navbar-default navbar-fixed-top navbar-burger navbar-transparent" role="navigation" >
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -22,8 +22,8 @@
           </form>
           <ul class="nav navbar-nav pull-right">
             <% if !current_user %>
-              <li><button type="button" class="btn btn-default"><%= link_to("注册", new_user_registration_path) %></button></li>
-              <li><button type="button" class="btn btn-default"><%= link_to("登入", new_user_session_path) %></button></li>
+              <li><button type="button" class="btn btn-default"><%= link_to("注册", new_user_registration_path, :class => " glyphicon glyphicon-user") %></button></li>
+              <li><button type="button" class="btn btn-default"><%= link_to("登入", new_user_session_path, :class => " glyphicon glyphicon-log-in") %></button></li>
             <% else %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -32,9 +32,9 @@
                 </a>
                 <ul class="dropdown-menu">
                   <% if current_user.admin? %>
-                    <li> <i class="fa fa-desktop" ><%= link_to("后台管理", admin_jobs_path) %></i> </li>
+                    <li><%= link_to("后台管理", admin_jobs_path, :class => "btn fa fa-desktop") %></li>
                   <% end %>
-                    <li> <span class="glyphicon glyphicon-log-out"><%= link_to("登出", destroy_user_session_path, method: :delete) %></span> </li>
+                    <li><%= link_to("登出", destroy_user_session_path, :class => "btn fa fa-sign-out", method: :delete) %></li>
                 </ul>
               </li>
             <% end %>
