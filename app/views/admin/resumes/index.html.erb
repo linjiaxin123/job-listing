@@ -2,3 +2,6 @@
 
 <hr>
 <%= render :partial => "resume", :collection => @resumes, :as => :resume %>
+<div>
+  <%= link_to("back", admin_jobs_path, :class => "btn btn-default") %>
+</div>
