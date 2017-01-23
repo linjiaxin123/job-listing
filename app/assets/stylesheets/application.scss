@@ -288,3 +288,21 @@
   color: black;
   border-bottom: solid 1px rgba(255,255,255,0.1);
 }
+
+
+/***footer固定在底部***/
+html {
+  height:100%;
+}
+
+body {
+  min-height:100%;margin:0;padding:0;position:relative;
+}
+
+.yield1 {
+  padding-bottom:150px;
+}/* main的padding-bottom值要等于或大于footer的height值 */
+
+footer {
+  position:absolute;bottom:0;width:100%;background-color: #ffc0cb;
+}
