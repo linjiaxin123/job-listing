@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Job Listing </title>
+        <title>管理后台</title>
         <%= csrf_meta_tags %>
 
         <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,7 +11,9 @@
     <body>
 
         <div class="container-fluid">
+          <div class="row">
             <%= render "common/navbar" %>
+          </div>
             <%= render "common/flashes" %>
             <div class="row">
               <div class="col-md-2">
@@ -26,7 +28,7 @@
               </div>
         </div>
 
-        <%= render "common/footer" %>
+          <%= render "common/footer" %>
 
     </body>
 </html>
