@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>前行网</title>
+        <%= csrf_meta_tags %>
+
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <link rel="shortcut icon" href="/images/logo.png">
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+          <div class="row">
+            <%= render "common/navbar" %>
+          </div>
+
+            <%= render "common/flashes" %>
+            <div class="yield2">
+              <%= yield %>
+            </div>
+        </div>
+
+          <%= render "common/footer" %>
+
+
+    </body>
+</html>
