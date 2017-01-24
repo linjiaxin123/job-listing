@@ -18,9 +18,7 @@
     </ul>
 </div>
 <h2 style="text-align:center">选择岗位</h2>
-<div class="text-center row">
-  <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
-</div>
+
 <% @jobs.each do |job| %>
 
 <div class="col-md-4 col-xs-12">
@@ -35,6 +33,7 @@
 </div>
 </div>
 <% end %>
-<div class="row">
-
+<div class="text-center col-md-12">
+  <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
 </div>
+<div class="row"></div>
