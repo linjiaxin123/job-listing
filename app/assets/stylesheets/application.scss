@@ -398,3 +398,7 @@ footer {
   padding: 20px;
   margin: 0px;
 }
+
+
+/***分页按钮优化***/
+.pagination>li>a, .pagination>li>span { border-radius: 50% !important;margin: 0 5px;}
