@@ -23,12 +23,12 @@
 
 <div class="col-md-4 col-xs-12">
 <div class="columns">
-  <ul class="text-center panel panel-success panel-pricing list-group">
+  <ul class="text-center panel panel-info panel-pricing list-group">
     <li class="panel-heading"><i class="fa fa-desktop"></i><h3><%= link_to(job.title, job_path(job)) %></h3></li>
     <li class="panel-body"><%= job.description %></li>
     <li class="highlight">薪酬范围：￥<%= job.wage_lower_bound %>-<%= job.wage_upper_bound %></li>
     <li class="highlight">创建时间：<%= local_time(job.created_at, '%B %e, %Y %l:%M%p') %></li>
-    <li class="panel-footer grey btn btn-default btn-success"><%= link_to("查看详情", job_path(job)) %></li>
+    <li class="panel-footer grey btn btn-default btn-info"><%= link_to("查看详情", job_path(job)) %></li>
   </ul>
 </div>
 </div>
