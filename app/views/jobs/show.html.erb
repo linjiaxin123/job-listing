@@ -1,9 +1,28 @@
-<h1> <%= @job.title %> </h1>
+<section id="plans col-md-8">
+        <div class="container">
+            <div class="row">
+                <!-- item -->
+                <div class="text-center">
+                    <div class="panel panel-info panel-pricing">
+                        <div class="panel-heading">
+                            <i class="fa fa-desktop"></i>
+                            <h3><%= @job.title %></h3>
+                        </div>
+                        <div class="panel-body text-center">
+                            <p><strong><%= @job.description %></strong></p>
+                        </div>
+                        <ul class="list-group text-center">
+                            <li class="list-group-item">薪酬下限：￥<%= @job.wage_lower_bound %></li>
+                            <li class="list-group-item">薪酬上限：￥<%= @job.wage_upper_bound %></li>
+                            <li class="list-group-item">创建时间：<%= @job.created_at %></li>
+                        </ul>
+                        <div class="panel-footer">
+                            <div class="grey btn btn-info"><%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /item -->
 
-<p>
-  <%= simple_format(@job.description) %>
-
-</p>
-<div class="text-center">
-  <%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %>
-</div>
+            </div>
+        </div>
+    </section>
