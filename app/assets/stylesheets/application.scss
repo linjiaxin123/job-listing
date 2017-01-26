@@ -409,13 +409,6 @@ footer {
   border-top-right-radius: 0px;
   border-top-left-radius: 0px;
 }
-.panel-pricing .panel-body {
-  background-color: #f0f0f0;
-  font-size: 40px;
-  color: #777777;
-  padding: 20px;
-  margin: 0px;
-}
 
 
 /***分页按钮优化***/
@@ -736,14 +729,6 @@ hr {
             transition: opacity 400ms ease-in-out;
 }
 
-.panel.panel-card .panel-body {
-    padding-top: 40px;
-    padding-bottom: 20px;
-
-    -webkit-transition: padding 400ms ease-in-out;
-            transition: padding 400ms ease-in-out;
-}
-
 .panel.panel-card .panel-thumbnails {
     padding: 0 15px 20px;
 }
@@ -760,12 +745,6 @@ hr {
 
     -webkit-transition: opacity 400ms ease-in-out;
             transition: opacity 400ms ease-in-out;
-}
-.panel.panel-card:hover .panel-body {
-    padding-top: 20px;
-
-    -webkit-transition: padding 400ms ease-in-out;
-            transition: padding 400ms ease-in-out;
 }
 
 
