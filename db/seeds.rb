@@ -290,11 +290,11 @@ jobs_info = [["人事专员","职位描述：
 
 puts "这个种子档会自动建立一个admin账号和一个用户账号, 并且创建40个public jobs, 以及40个hidden jobs"
 
-create_account = User.create([email: "admin@gmail.com", password:"12345678",password_confirmation: "12345678",is_admin:"true"])
+create_account = User.create([nickname: "管理员", email: "admin@gmail.com", password:"12345678",password_confirmation: "12345678",is_admin:"true"])
 
 puts "Admin account created."
 
-create_account_user = User.create([email: "aaa@aaa.com", password:"12345678",password_confirmation: "12345678",is_admin:"false"])
+create_account_user = User.create([nickname: "Allen", email: "aaa@aaa.com", password:"12345678",password_confirmation: "12345678",is_admin:"false"])
 
 puts "User account created."
 
