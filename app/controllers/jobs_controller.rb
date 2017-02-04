@@ -81,10 +81,9 @@ class JobsController < ApplicationController
   def validate_search_key
     @query_string = params[:q].gsub(/\\|\'|\/|\?/, "")
     if params[:q].present?
-      @search_criteria =  {title_cont: @query_string}
+      @search_criteria =  {title_or_company_name_or_place_cont: @query_string}
     end
   end
-
 
   def search_criteria(query_string)
     { :title_cont => query_string }
@@ -93,7 +92,7 @@ class JobsController < ApplicationController
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden, :place, :company_name, :recruitment_number)
   end
 
 end

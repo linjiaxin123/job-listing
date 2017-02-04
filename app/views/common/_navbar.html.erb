@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/"><img src='<%= image_url 'logo.png' %>' >前行网</a>
+            <a class="navbar-brand highlight" href="/"><img src='<%= image_url 'logo.png' %>' >前行网</a>
         </div>
         <ul class="header-menu horizontal-list">
             <li>
@@ -15,7 +15,7 @@
         <div class="navbar-form navbar-left">
         <%= form_tag search_jobs_path , :method => :get, :class => "jobs-search-form" do %>
           <div class="input-group" id="search-id" >
-            <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="搜索职位">
+            <input type="text" class="form-control" name="q" value="<%= params[:q] %>" placeholder="搜索职位，公司，城市">
               <div class="input-group-btn">
                 <button class="btn btn-default" type="submit">
                   <i class="glyphicon glyphicon-search"></i>
@@ -27,8 +27,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
             <% if !current_user %>
-              <li><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
-              <li><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
+              <li class="highlight btn-default"><a href="#" data-toggle="modal" data-target="#signup-modal">注册</a></li>
+              <li class="highlight btn-default"><a href="#" data-toggle="modal" data-target="#login-modal">登入</a></li>
             <% else %>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -37,10 +37,10 @@
                 </a>
                 <ul class="dropdown-menu">
                   <% if current_user.admin? %>
-                    <li> <%= link_to("后台管理", admin_jobs_path, :class => "btn fa fa-desktop") %> </li>
+                    <li class="highlight"> <%= link_to("后台管理", admin_jobs_path, :class => "btn fa fa-desktop") %> </li>
                   <% end %>
-                  <li> <%= link_to("已收藏的工作", favorite_index_path, :class => "btn fa fa-star") %> </li>
-                  <li> <%= link_to("登出", destroy_user_session_path, :class => "btn fa fa-sign-out", method: :delete) %> </li>
+                  <li class="highlight"> <%= link_to("已收藏的工作", favorite_index_path, :class => "btn fa fa-star") %> </li>
+                  <li class="highlight"> <%= link_to("登出", destroy_user_session_path, :class => "btn fa fa-sign-out", method: :delete) %> </li>
                 </ul>
               </li>
             <% end %>
@@ -52,15 +52,15 @@
     <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
       <div class="modal-dialog" role="document">
         <div class="loginmodal-container">
-           <h2>Log in</h2>
+           <h2>登录</h2>
            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
              <div class="form-inputs">
-               <%= f.input :email, required: false, autofocus: true %>
-               <%= f.input :password, required: false %>
+               <%= f.input :email, required: false, autofocus: true , :label => "登录邮箱" %>
+               <%= f.input :password, required: false , :label => "密码" %>
                <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
              </div>
              <div class="form-actions">
-               <%= f.button :submit, "Log in" %>
+               <%= f.button :submit, "登录" %>
              </div>
            <% end %>
         </div>
@@ -70,17 +70,17 @@
     <div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
       <div class="modal-dialog">
         <div class="loginmodal-container">
-          <h2>Sign up</h2>
+          <h2>注册</h2>
             <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
             <%= f.error_notification %>
             <div class="form-inputs">
-              <%= f.input :nickname, required: true %>
-              <%= f.input :email, required: true, autofocus: true %>
-              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-              <%= f.input :password_confirmation, required: true %>
+              <%= f.input :nickname, required: true , :label => "用户名" %>
+              <%= f.input :email, required: true, autofocus: true , :label => "注册邮箱" %>
+              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) , :label => "密码" %>
+              <%= f.input :password_confirmation, required: true , :label => "确认密码" %>
             </div>
             <div class="form-actions">
-                <%= f.button :submit, "Sign up" %>
+                <%= f.button :submit, "注册" %>
             </div>
           <% end %>
         </div>

@@ -288,6 +288,10 @@ jobs_info = [["人事专员","职位描述：
 ]
 ]
 
+jobs_cname = ["百度","京东","阿里巴巴","腾讯","新生大学","情非得已"]
+
+jobs_place = ["北京","上海","广州","深圳","厦门","杭州"]
+
 puts "这个种子档会自动建立一个admin账号和一个用户账号, 并且创建40个public jobs, 以及40个hidden jobs"
 
 create_account = User.create([nickname: "管理员", email: "admin@gmail.com", password:"12345678",password_confirmation: "12345678",is_admin:"true"])
@@ -301,7 +305,8 @@ puts "User account created."
 create_jobs = for i in 1..40 do
  job_test=jobs_info[rand(0..20)]
  Job.create!([title: job_test[0],description: job_test[1], wage_upper_bound: rand(50..99)*100,
-   wage_lower_bound: rand(10..49)*100, is_hidden:"false"])
+  wage_lower_bound: rand(10..49)*100, recruitment_number: rand(1..9), company_name: jobs_cname[rand(0..5)],
+  place: jobs_place[rand(0..5)],is_hidden:"false"])
 end
 
 puts "40 Public jobs created."
@@ -309,7 +314,8 @@ puts "40 Public jobs created."
 create_jobs = for i in 1..40 do
  job_test=jobs_info[rand(0..20)]
  Job.create!([title: job_test[0],description: job_test[1], wage_upper_bound: rand(50..99)*100,
-   wage_lower_bound: rand(10..49)*100, is_hidden:"true"])
+   wage_lower_bound: rand(10..49)*100, recruitment_number: rand(1..9), company_name: jobs_cname[rand(0..5)],
+   place: jobs_place[rand(0..5)],is_hidden:"true"])
 end
 
 puts "40 Hidden jobs created."

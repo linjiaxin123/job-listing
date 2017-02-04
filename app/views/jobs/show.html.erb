@@ -7,20 +7,27 @@
                             <i class="fa fa-desktop"></i>
                             <h3><%= @job.title %></h3>
                         </div>
+                        <div class="text-center">
+                          <span><i class="fa fa-handshake-o"></i> 公司名称：<%= @job.company_name %> |</span>
+                          <span><i class="fa fa-paper-plane-o"></i> 城市：<%= @job.place %> |</span>
+                          <span><i class="fa fa-thumbs-o-up"></i> 招聘人数：<%= @job.recruitment_number %> |</span>
+                          <span><i class="fa fa-thumbs-up"></i> 应聘人数：<%= @job.resumes.count %></span>
+                        </div>
                         <div class="panel-body">
                             <p><strong><%= simple_format(@job.description) %></strong></p>
                         </div>
                         <ul class="list-group text-center">
-                            <li class="list-group-item">薪酬下限：￥<%= @job.wage_lower_bound %></li>
-                            <li class="list-group-item">薪酬上限：￥<%= @job.wage_upper_bound %></li>
-                            <li class="list-group-item">创建时间：<%= @job.created_at %></li>
+                            <li class="highlight badge badge-info">薪酬范围：￥<%= @job.wage_lower_bound %>-<%= @job.wage_upper_bound %></li>
+                            <li class="list-group-item">创建时间：<%= @job.created_at.to_date %></li>
                         </ul>
                         <div class="panel-footer text-center">
                             <div class="grey btn btn-info"><%= link_to("投交履历", new_job_resume_path(@job), :style => "font-size: 30px; text-decoration:underline;") %></div>
                         </div>
                     </div>
                 <!-- /item -->
-
+                <div>
+                  <%= link_to("back", jobs_path, :class => "btn btn-default") %>
+                </div>
             </div>
         </div>
     </section>

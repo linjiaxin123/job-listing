@@ -9,10 +9,23 @@
       <div class="col-md-4 col-xs-12">
       <div class="columns">
         <ul class="text-center panel panel-info panel-pricing list-group">
-          <li class="panel-heading"><i class="fa fa-desktop"></i><h3><%= link_to(render_highlight_content(job, @query_string), job_path(job)) %></h3></li>
-          <li class="highlight">薪酬范围：￥<%= job.wage_lower_bound %>-<%= job.wage_upper_bound %></li>
-          <li class="highlight">创建时间：<%= job.created_at.to_date %></li>
-          <li class="panel-footer grey btn btn-default btn-info"><%= link_to("查看详情", job_path(job)) %></li>
+          <li class="panel-heading"><i class="fa fa-desktop"></i><h3><%= link_to(job.title, job_path(job)) %></h3></li>
+          <li>
+            <% if current_user && current_user.is_favorite_of?(job) %>
+              <%= link_to("取消收藏", favorite_job_path(job, type: "unfavorite"), :class => "btn btn-default fa fa-star-o", method: :put) %>
+            <% else %>
+              <%= link_to("添加收藏", favorite_job_path(job, type: "favorite"), :class => "btn btn-default fa fa-star", method: :put) %>
+            <% end %>
+          </li>
+          <li>
+            <span><i class="fa fa-handshake-o"></i> 公司名称：<%= job.company_name %> |</span>
+            <span><i class="fa fa-paper-plane-o"></i> 城市：<%= job.place %> |</span>
+            <span><i class="fa fa-thumbs-o-up"></i> 招聘人数：<%= job.recruitment_number %> |</span>
+            <span><i class="fa fa-thumbs-up"></i> 应聘人数：<%= job.resumes.count %></span>
+          </li>
+          <li class="highlight badge badge-info">薪酬范围：￥<%= job.wage_lower_bound %>-<%= job.wage_upper_bound %></li>
+          <li class="highlight"><i class="fa fa-clock-o"></i> 创建时间：<%= job.created_at.to_date %></li>
+          <li class="highlight panel-footer grey btn btn-default btn-info"><%= link_to("查看详情", job_path(job)) %></li>
         </ul>
       </div>
       </div>

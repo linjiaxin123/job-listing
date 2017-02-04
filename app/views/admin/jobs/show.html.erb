@@ -1,6 +1,30 @@
-<h1> <%= @job.title %> </h1>
-
-<p>
-  <%= simple_format(@job.description) %>
-
-</p>
+<section id="plans col-md-8">
+        <div class="container">
+            <div class="row">
+                <!-- item -->
+                    <div class="panel panel-info panel-pricing">
+                        <div class="panel-heading text-center">
+                            <i class="fa fa-desktop"></i>
+                            <h3><%= @job.title %></h3>
+                        </div>
+                        <div class="text-center">
+                          <span><i class="fa fa-handshake-o"></i> 公司名称：<%= @job.company_name %> |</span>
+                          <span><i class="fa fa-paper-plane-o"></i> 城市：<%= @job.place %> |</span>
+                          <span><i class="fa fa-thumbs-o-up"></i> 招聘人数：<%= @job.recruitment_number %> |</span>
+                          <span><i class="fa fa-thumbs-up"></i> 应聘人数：<%= @job.resumes.count %></span>
+                        </div>
+                        <div class="panel-body">
+                            <p><strong><%= simple_format(@job.description) %></strong></p>
+                        </div>
+                        <ul class="list-group text-center">
+                            <li class="highlight badge badge-info">薪酬范围：￥<%= @job.wage_lower_bound %>-<%= @job.wage_upper_bound %></li>
+                            <li class="list-group-item">创建时间：<%= @job.created_at.to_date %></li>
+                        </ul>
+                    </div>
+                <!-- /item -->
+                <div>
+                  <%= link_to("back", admin_jobs_path, :class => "btn btn-default") %>
+                </div>
+            </div>
+        </div>
+    </section>

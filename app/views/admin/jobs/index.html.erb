@@ -8,7 +8,7 @@
         <div id="sidebar_menu" class="sidebar-nav">
            <div class="sidebar-brand text-center"><%= link_to("后台管理", admin_jobs_path) %></div>
         </div>
-        <ul class="sidebar-nav " id="sidebar">
+        <ul class="sidebar-nav" id="sidebar">
           <li><%= link_to("首页", root_path, :class => "btn btn-info fa fa-home" ) %></li>
           <li><%= link_to("新增岗位", new_admin_job_path, :class => "btn btn-success fa fa-plus" ) %></li>
           <li><%= link_to("马上应征", jobs_path, :class => "btn btn-danger fa fa-handshake-o" ) %></li>
@@ -33,13 +33,22 @@
                             收到履历数量
                           </td>
                           <td>
-                              薪资范围
+                            公司名称
                           </td>
                           <td>
-                              管理选项
+                            招聘人数
                           </td>
                           <td>
-                              刊登时间
+                            所在城市
+                          </td>
+                          <td>
+                            薪资范围
+                          </td>
+                          <td>
+                            管理选项
+                          </td>
+                          <td>
+                            刊登时间
                           </td>
                       </tr>
                     </thead>
@@ -52,14 +61,17 @@
                           <%= link_to(job.title, admin_job_path(job)) %>
                         </td>
                         <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
+                        <td> <%= job.company_name %> </td>
+                        <td> <%= job.recruitment_number %> </td>
+                        <td> <%= job.place %> </td>
                         <td> ¥ <%= job.wage_lower_bound %>-<%= job.wage_upper_bound %>  </td>
                         <td>
-                          <%= link_to edit_admin_job_path(job), class: "btn btn-xs btn-info " do %><i class="fa fa-pencil-square-o"></i><% end %>
-                          <%= link_to admin_job_path(job), :method => :delete, :class => "btn btn-xs  btn-danger", :data => { :confirm => "Are you sure?" } do %><i class="fa fa-trash-o"></i><% end %>
+                          <%= link_to edit_admin_job_path(job), class: "btn btn-xs btn-info highlight" do %><i class="fa fa-pencil-square-o"></i><% end %>
+                          <%= link_to admin_job_path(job), :method => :delete, :class => "btn btn-xs btn-danger highlight", :data => { :confirm => "Are you sure?" } do %><i class="fa fa-trash-o"></i><% end %>
                           <% if job.is_hidden %>
-                            <%= link_to publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-success" do %><i class="fa fa-eye"></i><% end %>
+                            <%= link_to publish_admin_job_path(job) , :method => :post, :class => "btn btn-xs btn-success highlight" do %><i class="fa fa-eye"></i><% end %>
                           <% else %>
-                            <%= link_to hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-warning" do %><i class="fa fa-eye-slash"></i><% end %>
+                            <%= link_to hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-warning highlight" do %><i class="fa fa-eye-slash"></i><% end %>
                           <% end %>
                         </td>
                         <td>
