@@ -5,7 +5,15 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :resumes
+  has_many :favorites
+  has_many :favorite_jobs, :through => :favorites, :source => :job
+
+  def is_favorite_of?(job)
+    favorite_jobs.include?(job)
+  end
+
   def admin?
     is_admin
   end
+
 end

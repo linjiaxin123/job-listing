@@ -6,6 +6,9 @@ class Job < ApplicationRecord
   scope :published, -> { where(is_hidden: false) }
   scope :recent, -> { order('created_at DESC') }
   has_many :resumes
+  has_many :favorites
+  has_many :fans, through: :favorites, source: :user
+
   def publish!
     self.is_hidden = false
     self.save

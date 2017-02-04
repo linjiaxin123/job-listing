@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :jobs do
+    put :favorite, on: :member
     resources :resumes
     collection do
       get :search
@@ -11,7 +12,9 @@ Rails.application.routes.draw do
   end
 
   resources :welcome do
+  end
 
+  resources :favorite do
   end
 
   root 'welcome#index'
